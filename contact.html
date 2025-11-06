@@ -144,32 +144,38 @@ const langBtn2 = document.getElementById('lang-btn2');
 let currentLang = 'nl';
 
 function toggleLang() {
-
-    const aboutDropdownLink = document.querySelector('#nav-links a[href="aboutus.html"]');
+    const aboutDropdownLink = document.querySelector('#nav-links a[href="aboutus"]');
     const dropdownItems = document.querySelectorAll('.dropdown li a');
 
-    if (currentLang === 'nl') {
-
-
+    if(currentLang === 'nl') {
+        // Headings & text
         document.getElementById('locatie-title').textContent = "Our Location";
-
         document.getElementById('contact-header').textContent = "Contact Us";
-        document.getElementById('adress-inf').textContent = "Temporary Adress: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
+        document.getElementById('adress-inf').textContent = "Temporary Address: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
         document.getElementById('kvk-nummer').textContent = "KVK-number: 98465759";
 
-        // Navigation links
-        const navLinks = [
-            { selector: '#nav-links a[href="index.html"]', text: 'Home' },
-            { selector: '#nav-links a[href="aboutus.html"]', text: 'About' },
-            { selector: '#nav-links a[href="ourservices.html"]', text: 'Our Services' },
-            { selector: '#nav-links a[href="duurzaamheid.html"]', text: 'Sustainability' },
-            { selector: '#nav-links a[href="contact.html"]', text: 'Contact' }
-        ];
+        // Form placeholders
+        form.name.placeholder = "Name";
+        form.email.placeholder = "Email";
+        subjectSelect.options[0].text = "Select Subject";
+        subjectSelect.options[1].text = "Sterilization of surgical instruments";
+        subjectSelect.options[2].text = "Cleaning of hospital equipment";
+        subjectSelect.options[3].text = "Medical device disinfection";
+        subjectSelect.options[4].text = "Equipment maintenance support";
+        subjectSelect.options[5].text = "Other";
+        customSubjectInput.placeholder = "Please specify your subject";
+        form.message.placeholder = "Your message";
+        form.querySelector('button[type="submit"]').textContent = "Send Message";
 
-        navLinks.forEach(link => {
-            const el = document.querySelector(link.selector);
-            el.childNodes[0].nodeValue = link.text + ' ';
-        });
+        // Navigation links
+        const navLinksArr = [
+            {selector: '#nav-links a[href="index"]', text: 'Home'},
+            {selector: '#nav-links a[href="aboutus"]', text: 'About'},
+            {selector: '#nav-links a[href="ourservices"]', text: 'Our Services'},
+            {selector: '#nav-links a[href="duurzaamheid"]', text: 'Sustainability'},
+            {selector: '#nav-links a[href="contact"]', text: 'Contact'}
+        ];
+        navLinksArr.forEach(link => document.querySelector(link.selector).childNodes[0].nodeValue = link.text + ' ');
 
         // Dropdown translations
         dropdownItems[0].textContent = 'About Us';
@@ -177,32 +183,39 @@ function toggleLang() {
         dropdownItems[2].textContent = 'Mission';
         dropdownItems[3].textContent = 'Vision';
 
-        // Update language buttons
+        // Language buttons
         langBtn.textContent = 'NL 🇳🇱';
         langBtn2.textContent = 'NL 🇳🇱';
         currentLang = 'en';
     } else {
-
-
+        // Switch back to Dutch
         document.getElementById('locatie-title').textContent = "Onze Locatie";
-
-        document.getElementById('contact-header').textContent = "Neem contact op";
-        document.getElementById('adress-inf').textContent = "Tijdelijk Addres: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
+        document.getElementById('contact-header').textContent = "Neem Contact Op";
+        document.getElementById('adress-inf').textContent = "Tijdelijk Adres: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
         document.getElementById('kvk-nummer').textContent = "KVK-nummer: 98465759";
 
-        // Navigation links
-        const navLinks = [
-            { selector: '#nav-links a[href="index.html"]', text: 'Home' },
-            { selector: '#nav-links a[href="aboutus.html"]', text: 'Over ons' },
-            { selector: '#nav-links a[href="ourservices.html"]', text: 'Dienstverlening' },
-            { selector: '#nav-links a[href="duurzaamheid.html"]', text: 'Duurzaamheid' },
-            { selector: '#nav-links a[href="contact.html"]', text: 'Contact' }
-        ];
+        // Form placeholders
+        form.name.placeholder = "Naam";
+        form.email.placeholder = "E-mail";
+        subjectSelect.options[0].text = "Onderwerp selecteren";
+        subjectSelect.options[1].text = "Sterilisatie van chirurgische instrumenten";
+        subjectSelect.options[2].text = "Reiniging van ziekenhuisapparatuur";
+        subjectSelect.options[3].text = "Desinfectie van medische apparaten";
+        subjectSelect.options[4].text = "Ondersteuning bij onderhoud van apparatuur";
+        subjectSelect.options[5].text = "Overig";
+        customSubjectInput.placeholder = "Specificeer uw onderwerp";
+        form.message.placeholder = "Uw bericht";
+        form.querySelector('button[type="submit"]').textContent = "Verstuur Bericht";
 
-        navLinks.forEach(link => {
-            const el = document.querySelector(link.selector);
-            el.childNodes[0].nodeValue = link.text + ' ';
-        });
+        // Navigation links
+        const navLinksArr = [
+            {selector: '#nav-links a[href="index"]', text: 'Home'},
+            {selector: '#nav-links a[href="aboutus"]', text: 'Over ons'},
+            {selector: '#nav-links a[href="ourservices"]', text: 'Dienstverlening'},
+            {selector: '#nav-links a[href="duurzaamheid"]', text: 'Duurzaamheid'},
+            {selector: '#nav-links a[href="contact"]', text: 'Contact'}
+        ];
+        navLinksArr.forEach(link => document.querySelector(link.selector).childNodes[0].nodeValue = link.text + ' ');
 
         // Dropdown translations
         dropdownItems[0].textContent = 'Over Ons';
@@ -210,7 +223,7 @@ function toggleLang() {
         dropdownItems[2].textContent = 'Missie';
         dropdownItems[3].textContent = 'Visie';
 
-        // Update language buttons
+        // Language buttons
         langBtn.textContent = 'EN 🇬🇧';
         langBtn2.textContent = 'EN 🇬🇧';
         currentLang = 'nl';
@@ -219,6 +232,7 @@ function toggleLang() {
 
 langBtn.addEventListener('click', toggleLang);
 langBtn2.addEventListener('click', toggleLang);
+
 
 
 const subjectSelect = document.getElementById('subject');
