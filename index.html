@@ -36,15 +36,15 @@
     <div class="nav-links" id="nav-links">
     <a href="index">Home</a>
         <div class="nav-item-dropdown">
-            <a href="aboutus">Over ons <span class="arrow">▼</span></a>
+            <a href="over-ons">Over ons <span class="arrow">▼</span></a>
             <ul class="dropdown">
-                <li><a href="aboutus#about-over">Over Ons</a></li>
-                <li><a href="aboutus#about-us">Wie Zijn Wij</a></li>
-                <li><a href="aboutus#about-missie">Missie</a></li>
-                <li><a href="aboutus#about-visie">Visie</a></li>
+                <li><a href="over-ons#about-over">Over Ons</a></li>
+                <li><a href="over-ons#about-us">Wie Zijn Wij</a></li>
+                <li><a href="over-ons#about-missie">Missie</a></li>
+                <li><a href="over-ons#about-visie">Visie</a></li>
             </ul>
         </div>
-        <a href="ourservices">Dienstverlening</a>
+        <a href="onze-diensten">Dienstverlening</a>
         <a href="duurzaamheid">Duurzaamheid</a>
         <a href="contact">Contact</a>
         <div class="language-toggle1"><button id="lang-btn">EN 🇬🇧</button></div>
@@ -69,7 +69,7 @@
                 met slagkracht op procesoptimalisatie en strategische innovatie. Samen vormen zij de drijvende kracht achter een toekomstbestendige,
                  veilige en duurzame aanpak van medisch steriele dienstverlening aan ziekenhuizen en klinieken in Nederland.
             </p>
-            <a id="about-link" class="btn" href="aboutus">Lees meer →</a>
+            <a id="about-link" class="btn" href="over-ons">Lees meer →</a>
         </section>
 
         <section id="services">
@@ -78,7 +78,7 @@
             STERIL biedt geavanceerde oplossingen voor het reinigen en steriliseren van medisch instrumentarium. 
             Met een focus op innovatie, veiligheid en duurzaamheid zorgen wij dat ziekenhuizen en klinieken kunnen rekenen op betrouwbare steriele processen.
         </p>
-        <a id="service-link" class="btn"  href="ourservices">Lees meer →</a>
+        <a id="service-link" class="btn"  href="onze-diensten">Lees meer →</a>
         </section>
 
         <section id="duurzaamheid">
@@ -206,10 +206,10 @@ function toggleLang() {
     document.querySelectorAll('a[href="index"]').forEach(el =>
         el.firstChild.textContent = isNL ? 'Home ' : 'Home '
     );
-    document.querySelectorAll('a[href="aboutus"]').forEach(el =>
+    document.querySelectorAll('a[href="over-ons"]').forEach(el =>
         el.firstChild.textContent = isNL ? 'About ' : 'Over ons '
     );
-    document.querySelectorAll('a[href="ourservices"]').forEach(el =>
+    document.querySelectorAll('a[href="onze-diensten"]').forEach(el =>
         el.firstChild.textContent = isNL ? 'Our Services ' : 'Dienstverlening '
     );
     document.querySelectorAll('a[href="duurzaamheid"]').forEach(el =>

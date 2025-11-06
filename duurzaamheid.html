@@ -41,15 +41,15 @@
         <div class="nav-links" id="nav-links">
             <a href="index">Home</a>
             <div class="nav-item-dropdown">
-                <a href="aboutus">Over ons <span class="arrow">▼</span></a>
+                <a href="over-ons">Over ons <span class="arrow">▼</span></a>
                 <ul class="dropdown">
-                    <li><a href="aboutus#about-over">Over Ons</a></li>
-                    <li><a href="aboutus#about-us">Wie Zijn Wij</a></li>
-                    <li><a href="aboutus#about-missie">Missie</a></li>
-                    <li><a href="aboutus#about-visie">Visie</a></li>
+                    <li><a href="over-ons#about-over">Over Ons</a></li>
+                    <li><a href="over-ons#about-us">Wie Zijn Wij</a></li>
+                    <li><a href="over-ons#about-missie">Missie</a></li>
+                    <li><a href="over-ons#about-visie">Visie</a></li>
                 </ul>
             </div>
-            <a href="ourservices">Dienstverlening</a>
+            <a href="onze-diensten">Dienstverlening</a>
             <a href="duurzaamheid">Duurzaamheid</a>
             <a href="contact">Contact</a>
             <div class="language-toggle1"><button id="lang-btn">EN 🇬🇧</button></div>
@@ -136,7 +136,7 @@ const langBtn2 = document.getElementById('lang-btn2');
 let currentLang = 'nl';
 
 function toggleLang() {
-    const aboutDropdownLink = document.querySelector('#nav-links a[href="aboutus"]');
+    const aboutDropdownLink = document.querySelector('#nav-links a[href="over-ons"]');
     const dropdownItems = document.querySelectorAll('.dropdown li a');
 
     if (currentLang === 'nl') {
@@ -149,7 +149,7 @@ function toggleLang() {
         // Navigation links
         document.querySelector('#nav-links a[href="index"]').textContent = 'Home';
         aboutDropdownLink.childNodes[0].nodeValue = 'About ';
-        document.querySelector('#nav-links a[href="ourservices"]').textContent = 'Our Services';
+        document.querySelector('#nav-links a[href="onze-diensten"]').textContent = 'Our Services';
         document.querySelector('#nav-links a[href="duurzaamheid"]').textContent = 'Sustainability';
         document.querySelector('#nav-links a[href="contact"]').textContent = 'Contact';
 
@@ -173,7 +173,7 @@ function toggleLang() {
         // Navigation links
         document.querySelector('#nav-links a[href="index"]').textContent = 'Home';
         aboutDropdownLink.childNodes[0].nodeValue = 'Over ons ';
-        document.querySelector('#nav-links a[href="ourservices"]').textContent = 'Dienstverlening';
+        document.querySelector('#nav-links a[href="onze-diensten"]').textContent = 'Dienstverlening';
         document.querySelector('#nav-links a[href="duurzaamheid"]').textContent = 'Duurzaamheid';
         document.querySelector('#nav-links a[href="contact"]').textContent = 'Contact';
 
