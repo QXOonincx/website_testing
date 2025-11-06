@@ -168,104 +168,72 @@ const langBtn2 = document.getElementById('lang-btn2');
 let currentLang = 'nl';
 
 function toggleLang() {
-    // About dropdown link and items
-    const aboutDropdownLink = document.querySelector('#nav-links a[href="aboutus"]');
+    const isNL = currentLang === 'nl';
+
+    // --- About section ---
+    document.getElementById('about-title').textContent = isNL ? 'About Us' : 'Over Ons';
+    document.getElementById('about-text').textContent = isNL ?
+        'STERIL was born out of a shared ambition to fundamentally improve the medical sterilization chain. The initiators combine years of management experience in healthcare institutions and industrial services with expertise in process optimization and strategic innovation. Together, they are the driving force behind a future-proof, safe, and sustainable approach to medical sterile services for hospitals and clinics in the Netherlands.' :
+        'STERIL is ontstaan uit een gedeelde ambitie om de medische sterilisatieketen fundamenteel te verbeteren. De initiatiefnemers combineren jarenlange bestuurservaring in zorginstellingen & industrieële dienstverlening, met slagkracht op procesoptimalisatie en strategische innovatie. Samen vormen zij de drijvende kracht achter een toekomstbestendige, veilige en duurzame aanpak van medisch steriele dienstverlening aan ziekenhuizen en klinieken in Nederland.';
+    document.getElementById('about-link').textContent = isNL ? 'Learn more →' : 'Lees meer →';
+
+    // --- Services section ---
+    document.getElementById('services-title').textContent = isNL ? 'Our Services' : 'Dienstverlening';
+    document.getElementById('services-text').textContent = isNL ?
+        'STERIL provides advanced solutions for cleaning and sterilizing medical instruments. With a focus on innovation, safety, and sustainability, we ensure hospitals and clinics can rely on efficient and sterile processes.' :
+        'STERIL biedt geavanceerde oplossingen voor het reinigen en steriliseren van medisch instrumentarium. Met een focus op innovatie, veiligheid en duurzaamheid zorgen wij dat ziekenhuizen en klinieken kunnen rekenen op betrouwbare steriele processen.';
+    document.getElementById('service-link').textContent = isNL ? 'Learn more →' : 'Lees meer →';
+
+    // --- Sustainability section ---
+    document.getElementById('duurzaam-title').textContent = isNL ? 'Sustainability' : 'Duurzaamheid';
+    document.getElementById('duurzaam-text').textContent = isNL ?
+        'At STERIL, we are committed to environmentally responsible practices. From reducing waste to using energy-efficient sterilization methods, we ensure patient safety goes hand-in-hand with sustainability.' :
+        'Bij STERIL zetten we ons in voor milieuvriendelijke praktijken. Van het verminderen van afval tot het gebruik van energiezuinige sterilisatiemethoden: we zorgen ervoor dat de veiligheid van patiënten hand in hand gaat met duurzaamheid.';
+    document.getElementById('duurzaam-1').textContent = isNL ? 'Eco-friendly cleaning agents' : 'Milieuvriendelijke schoonmaakmiddelen';
+    document.getElementById('duurzaam-2').textContent = isNL ? 'Energy-efficient sterilization' : 'Energiezuinige sterilisatie';
+    document.getElementById('duurzaam-3').textContent = isNL ? 'Recycling and waste reduction' : 'Recycling en afvalvermindering';
+    document.getElementById('duurzaam-link').textContent = isNL ? 'Learn more →' : 'Lees meer →';
+
+    // --- Contact section ---
+    document.getElementById('contact-header').textContent = isNL ? 'Contact Us' : 'Neem Contact Op';
+    document.getElementById('adress-inf').textContent = isNL ?
+        "Temporary Address: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum" :
+        "Tijdelijk Adres: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
+    document.getElementById('kvk-nummer').textContent = isNL ?
+        "KVK-number: 98465759" : "KVK-nummer: 98465759";
+
+    // --- Navigation links (apply to ALL menus visible or hidden)
+    document.querySelectorAll('a[href="index"]').forEach(el =>
+        el.firstChild.textContent = isNL ? 'Home ' : 'Home '
+    );
+    document.querySelectorAll('a[href="aboutus"]').forEach(el =>
+        el.firstChild.textContent = isNL ? 'About ' : 'Over ons '
+    );
+    document.querySelectorAll('a[href="ourservices"]').forEach(el =>
+        el.firstChild.textContent = isNL ? 'Our Services ' : 'Dienstverlening '
+    );
+    document.querySelectorAll('a[href="duurzaamheid"]').forEach(el =>
+        el.firstChild.textContent = isNL ? 'Sustainability ' : 'Duurzaamheid '
+    );
+    document.querySelectorAll('a[href="contact"]').forEach(el =>
+        el.firstChild.textContent = isNL ? 'Contact ' : 'Contact '
+    );
+
+    // --- Dropdown items ---
     const dropdownItems = document.querySelectorAll('.dropdown li a');
+    dropdownItems[0].textContent = isNL ? 'About Us' : 'Over Ons';
+    dropdownItems[1].textContent = isNL ? 'Who We Are' : 'Wie Zijn Wij';
+    dropdownItems[2].textContent = isNL ? 'Mission' : 'Missie';
+    dropdownItems[3].textContent = isNL ? 'Vision' : 'Visie';
 
-    if (currentLang === 'nl') {
-        // About section
-        document.getElementById('about-title').textContent = 'About Us';
-        document.getElementById('about-text').textContent = 'STERIL was born out of a shared ambition to fundamentally improve the medical sterilization chain. The initiators combine years of management experience in healthcare institutions and industrial services with expertise in process optimization and strategic innovation. Together, they are the driving force behind a future-proof, safe, and sustainable approach to medical sterile services for hospitals and clinics in the Netherlands.';
-        document.getElementById('about-link').textContent = 'Learn more →';
+    // --- Button update ---
+    langBtn.textContent = isNL ? 'NL 🇳🇱' : 'EN 🇬🇧';
+    langBtn2.textContent = isNL ? 'NL 🇳🇱' : 'EN 🇬🇧';
 
-        // Services section
-        document.getElementById('services-title').textContent = 'Our Services';
-        document.getElementById('services-text').textContent = 'STERIL provides advanced solutions for cleaning and sterilizing medical instruments. With a focus on innovation, safety, and sustainability, we ensure hospitals and clinics can rely on efficient and sterile processes.';
-        document.getElementById('service-link').textContent = 'Learn more →';
-
-        // Sustainability section
-        document.getElementById('duurzaam-title').textContent = 'Sustainability';
-        document.getElementById('duurzaam-text').textContent = 'At STERIL, we are committed to environmentally responsible practices. From reducing waste to using energy-efficient sterilization methods, we ensure patient safety goes hand-in-hand with sustainability.';
-        document.getElementById('duurzaam-1').textContent = 'Eco-friendly cleaning agents';
-        document.getElementById('duurzaam-2').textContent = 'Energy-efficient sterilization';
-        document.getElementById('duurzaam-3').textContent = 'Recycling and waste reduction';
-        document.getElementById('duurzaam-link').textContent = 'Learn more →';
-
-        document.getElementById('contact-header').textContent = "Contact Us";
-        document.getElementById('adress-inf').textContent = "Temporary Adress: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
-        document.getElementById('kvk-nummer').textContent = "KVK-number: 98465759";
-
-        // Navigation links
-        const navLinks = [
-            { selector: '#nav-links a[href="index"]', text: 'Home' },
-            { selector: '#nav-links a[href="aboutus"]', text: 'About' },
-            { selector: '#nav-links a[href="ourservices"]', text: 'Our Services' },
-            { selector: '#nav-links a[href="duurzaamheid"]', text: 'Sustainability' },
-            { selector: '#nav-links a[href="contact"]', text: 'Contact' }
-        ];
-
-        navLinks.forEach(link => {
-            const el = document.querySelector(link.selector);
-            el.childNodes[0].nodeValue = link.text + ' ';
-        });
-
-        // Dropdown translations
-        dropdownItems[0].textContent = 'About Us';
-        dropdownItems[1].textContent = 'Who We Are';
-        dropdownItems[2].textContent = 'Mission';
-        dropdownItems[3].textContent = 'Vision';
-
-        // Update language buttons
-        langBtn.textContent = 'NL 🇳🇱';
-        langBtn2.textContent = 'NL 🇳🇱';
-        currentLang = 'en';
-    } else {
-        // Dutch content
-        document.getElementById('about-title').textContent = 'Over Ons';
-        document.getElementById('about-text').textContent = 'STERIL is ontstaan uit een gedeelde ambitie om de medische sterilisatieketen fundamenteel te verbeteren. De initiatiefnemers combineren jarenlange bestuurservaring in zorginstellingen & industrieële dienstverlening, met slagkracht op procesoptimalisatie en strategische innovatie. Samen vormen zij de drijvende kracht achter een toekomstbestendige, veilige en duurzame aanpak van medisch steriele dienstverlening aan ziekenhuizen en klinieken in Nederland.';
-        document.getElementById('about-link').textContent = 'Lees meer →';
-
-        document.getElementById('services-title').textContent = 'Dienstverlening';
-        document.getElementById('services-text').textContent = 'STERIL biedt geavanceerde oplossingen voor het reinigen en steriliseren van medisch instrumentarium. Met een focus op innovatie, veiligheid en duurzaamheid zorgen wij dat ziekenhuizen en klinieken kunnen rekenen op betrouwbare steriele processen.';
-        document.getElementById('service-link').textContent = 'Lees meer →';
-
-        document.getElementById('duurzaam-title').textContent = 'Duurzaamheid';
-        document.getElementById('duurzaam-text').textContent = 'Bij STERIL zetten we ons in voor milieuvriendelijke praktijken. Van het verminderen van afval tot het gebruik van energiezuinige sterilisatiemethoden: we zorgen ervoor dat de veiligheid van patiënten hand in hand gaat met duurzaamheid.';
-        document.getElementById('duurzaam-1').textContent = 'Milieuvriendelijke schoonmaakmiddelen';
-        document.getElementById('duurzaam-2').textContent = 'Energiezuinige sterilisatie';
-        document.getElementById('duurzaam-3').textContent = 'Recycling en afvalvermindering';
-        document.getElementById('duurzaam-link').textContent = 'Lees meer →';
-
-        document.getElementById('contact-header').textContent = "Neem Contact Op";
-        document.getElementById('adress-inf').textContent = "Tijdelijk Addres: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
-        document.getElementById('kvk-nummer').textContent = "KVK-nummer: 98465759";
-
-        // Navigation links
-        const navLinks = [
-            { selector: '#nav-links a[href="index"]', text: 'Home' },
-            { selector: '#nav-links a[href="aboutus"]', text: 'Over ons' },
-            { selector: '#nav-links a[href="ourservices"]', text: 'Dienstverlening' },
-            { selector: '#nav-links a[href="duurzaamheid"]', text: 'Duurzaamheid' },
-            { selector: '#nav-links a[href="contact"]', text: 'Contact' }
-        ];
-
-        navLinks.forEach(link => {
-            const el = document.querySelector(link.selector);
-            el.childNodes[0].nodeValue = link.text + ' ';
-        });
-
-        // Dropdown translations
-        dropdownItems[0].textContent = 'Over Ons';
-        dropdownItems[1].textContent = 'Wie Zijn Wij';
-        dropdownItems[2].textContent = 'Missie';
-        dropdownItems[3].textContent = 'Visie';
-
-        // Update language buttons
-        langBtn.textContent = 'EN 🇬🇧';
-        langBtn2.textContent = 'EN 🇬🇧';
-        currentLang = 'nl';
-    }
+    // Toggle state
+    currentLang = isNL ? 'en' : 'nl';
 }
+
 
 langBtn.addEventListener('click', toggleLang);
 langBtn2.addEventListener('click', toggleLang);
