@@ -175,14 +175,14 @@ function toggleLang() {
     document.getElementById('about-text').textContent = isNL ?
         'STERIL was born out of a shared ambition to fundamentally improve the medical sterilization chain. The initiators combine years of management experience in healthcare institutions and industrial services with expertise in process optimization and strategic innovation. Together, they are the driving force behind a future-proof, safe, and sustainable approach to medical sterile services for hospitals and clinics in the Netherlands.' :
         'STERIL is ontstaan uit een gedeelde ambitie om de medische sterilisatieketen fundamenteel te verbeteren. De initiatiefnemers combineren jarenlange bestuurservaring in zorginstellingen & industrieële dienstverlening, met slagkracht op procesoptimalisatie en strategische innovatie. Samen vormen zij de drijvende kracht achter een toekomstbestendige, veilige en duurzame aanpak van medisch steriele dienstverlening aan ziekenhuizen en klinieken in Nederland.';
-    document.getElementById('about-link').textContent = isNL ? 'Learn more →' : 'Lees meer →';
+    document.getElementById('about-link').innerText = isNL ? 'Learn more →' : 'Lees meer →';
 
     // --- Services section ---
     document.getElementById('services-title').textContent = isNL ? 'Our Services' : 'Dienstverlening';
     document.getElementById('services-text').textContent = isNL ?
         'STERIL provides advanced solutions for cleaning and sterilizing medical instruments. With a focus on innovation, safety, and sustainability, we ensure hospitals and clinics can rely on efficient and sterile processes.' :
         'STERIL biedt geavanceerde oplossingen voor het reinigen en steriliseren van medisch instrumentarium. Met een focus op innovatie, veiligheid en duurzaamheid zorgen wij dat ziekenhuizen en klinieken kunnen rekenen op betrouwbare steriele processen.';
-    document.getElementById('service-link').textContent = isNL ? 'Learn more →' : 'Lees meer →';
+    document.getElementById('service-link').innerText = isNL ? 'Learn more →' : 'Lees meer →';
 
     // --- Sustainability section ---
     document.getElementById('duurzaam-title').textContent = isNL ? 'Sustainability' : 'Duurzaamheid';
@@ -192,7 +192,7 @@ function toggleLang() {
     document.getElementById('duurzaam-1').textContent = isNL ? 'Eco-friendly cleaning agents' : 'Milieuvriendelijke schoonmaakmiddelen';
     document.getElementById('duurzaam-2').textContent = isNL ? 'Energy-efficient sterilization' : 'Energiezuinige sterilisatie';
     document.getElementById('duurzaam-3').textContent = isNL ? 'Recycling and waste reduction' : 'Recycling en afvalvermindering';
-    document.getElementById('duurzaam-link').textContent = isNL ? 'Learn more →' : 'Lees meer →';
+    document.getElementById('duurzaam-link').innerText = isNL ? 'Learn more →' : 'Lees meer →';
 
     // --- Contact section ---
     document.getElementById('contact-header').textContent = isNL ? 'Contact Us' : 'Neem Contact Op';
