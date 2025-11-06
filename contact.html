@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Steril Medical Services - Professional medical equipment cleaning for hospitals.">
+<title>Steril Medical Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="indexstyling.css">
+
+<!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- Apple Touch Icon for iOS -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Optional: Web manifest (for PWA support) -->
+<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+<header id="top">
+    <h1>STERIL</h1>
+    <h1>Medical Services</h1>
+    <p>Professional Medical Equipment Cleaning for Hospitals</p>
+</header>
+
+<nav>
+    <a href="index.html" id="logo-link"><img class="logo" src="logonavbar.png" alt="Steril Medical Services Logo"></a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+
+    <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-item-dropdown">
+            <a href="aboutus.html">Over ons <span class="arrow">▼</span></a>
+            <ul class="dropdown">
+                <li><a href="aboutus.html#about-over">Over Ons</a></li>
+                <li><a href="aboutus.html#about-us">Wie Zijn Wij</a></li>
+                <li><a href="aboutus.html#about-missie">Missie</a></li>
+                <li><a href="aboutus.html#about-visie">Visie</a></li>
+            </ul>
+        </div>
+        <a href="ourservices.html">Dienstverlening</a>
+        <a href="duurzaamheid.html">Duurzaamheid</a>
+        <a href="contact.html">Contact</a>
+        <div class="language-toggle1"><button id="lang-btn">EN 🇬🇧</button></div>
+    </div>
+
+    <div class="language-toggle"><button id="lang-btn2">EN 🇬🇧</button></div>
+</nav>
+
+<div class="main-layout">
+    <div class="left-column">
+        <section id="information">
+            <h2 id="locatie-title">Onze Locatie</h2>
+            <iframe 
+                src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1539137.201449961!2d4.421193730393096!3d52.24202276780767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66b6a08fa2d73%3A0xc719f1236d183e02!2sPhotonVentures!5e1!3m2!1snl!2snl!4v1761303870707!5m2!1snl!2snl"
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 12px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+    </div>
+
+    <div class="right-column">
+        <section id="contact">
+            <h2 id = "contact-header">Neem Contact Op</h2>
+            <div class="contact-info">
+                <p>Email: info@STERILmedicalservices.com</p>
+                <p id = "adress-inf">Tijdelijk Address: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum</p>
+                <p id = "kvk-nummer"> KVK-nummer: 98465759</p>
+            </div>
+
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <select name="subject" id="subject" required>
+                    <option value="" disabled selected>Select Subject</option>
+                    <option value="Sterilization of surgical instruments">Sterilization of surgical instruments</option>
+                    <option value="Cleaning of hospital equipment">Cleaning of hospital equipment</option>
+                    <option value="Medical device disinfection">Medical device disinfection</option>
+                    <option value="Equipment maintenance support">Equipment maintenance support</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="text" id="custom-subject" placeholder="Please specify your subject" style="display:none;">
+                <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="form-message" style="margin-top:10px;font-weight:600;"></div>
+            <br>
+        </section>
+    </div>
+</div>
+
+<footer>
+  <p>
+    <a href="algemene-voorwaarden.pdf" target="_blank" style="color:#0A66C2; text-decoration:none; margin:0 10px;">
+      Algemene voorwaarden
+    </a> |
+    <a href="disclaimer.pdf" target="_blank" style="color:#0A66C2; text-decoration:none; margin:0 10px;">
+      Disclaimer
+    </a> |
+    <a href="corporate-governance.pdf" target="_blank" style="color:#0A66C2; text-decoration:none; margin:0 10px;">
+      Corporate governance
+    </a>
+
+</p>
+  <p style="margin-top:10px;">&copy; 2025 STERIL Medical Services. All rights reserved.</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init("Eg5IVr5o0vhwaw7OZ");
+</script>
+
+<script>
+
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.2 });
+sections.forEach(section => observer.observe(section));
+
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('show'));
+document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('show')));
+document.addEventListener('click', e => {
+    if(!navLinks.contains(e.target) && !hamburger.contains(e.target)) navLinks.classList.remove('show');
+});
+
+
+const langBtn = document.getElementById('lang-btn');
+const langBtn2 = document.getElementById('lang-btn2');
+let currentLang = 'nl';
+
+function toggleLang() {
+
+    const aboutDropdownLink = document.querySelector('#nav-links a[href="aboutus.html"]');
+    const dropdownItems = document.querySelectorAll('.dropdown li a');
+
+    if (currentLang === 'nl') {
+
+
+        document.getElementById('locatie-title').textContent = "Our Location";
+
+        document.getElementById('contact-header').textContent = "Contact Us";
+        document.getElementById('adress-inf').textContent = "Temporary Adress: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
+        document.getElementById('kvk-nummer').textContent = "KVK-number: 98465759";
+
+        // Navigation links
+        const navLinks = [
+            { selector: '#nav-links a[href="index.html"]', text: 'Home' },
+            { selector: '#nav-links a[href="aboutus.html"]', text: 'About' },
+            { selector: '#nav-links a[href="ourservices.html"]', text: 'Our Services' },
+            { selector: '#nav-links a[href="duurzaamheid.html"]', text: 'Sustainability' },
+            { selector: '#nav-links a[href="contact.html"]', text: 'Contact' }
+        ];
+
+        navLinks.forEach(link => {
+            const el = document.querySelector(link.selector);
+            el.childNodes[0].nodeValue = link.text + ' ';
+        });
+
+        // Dropdown translations
+        dropdownItems[0].textContent = 'About Us';
+        dropdownItems[1].textContent = 'Who We Are';
+        dropdownItems[2].textContent = 'Mission';
+        dropdownItems[3].textContent = 'Vision';
+
+        // Update language buttons
+        langBtn.textContent = 'NL 🇳🇱';
+        langBtn2.textContent = 'NL 🇳🇱';
+        currentLang = 'en';
+    } else {
+
+
+        document.getElementById('locatie-title').textContent = "Onze Locatie";
+
+        document.getElementById('contact-header').textContent = "Neem contact op";
+        document.getElementById('adress-inf').textContent = "Tijdelijk Addres: STERIL Medical Services BV, 's-Gravelandseweg 71, 1217 EJ Hilversum";
+        document.getElementById('kvk-nummer').textContent = "KVK-nummer: 98465759";
+
+        // Navigation links
+        const navLinks = [
+            { selector: '#nav-links a[href="index.html"]', text: 'Home' },
+            { selector: '#nav-links a[href="aboutus.html"]', text: 'Over ons' },
+            { selector: '#nav-links a[href="ourservices.html"]', text: 'Dienstverlening' },
+            { selector: '#nav-links a[href="duurzaamheid.html"]', text: 'Duurzaamheid' },
+            { selector: '#nav-links a[href="contact.html"]', text: 'Contact' }
+        ];
+
+        navLinks.forEach(link => {
+            const el = document.querySelector(link.selector);
+            el.childNodes[0].nodeValue = link.text + ' ';
+        });
+
+        // Dropdown translations
+        dropdownItems[0].textContent = 'Over Ons';
+        dropdownItems[1].textContent = 'Wie Zijn Wij';
+        dropdownItems[2].textContent = 'Missie';
+        dropdownItems[3].textContent = 'Visie';
+
+        // Update language buttons
+        langBtn.textContent = 'EN 🇬🇧';
+        langBtn2.textContent = 'EN 🇬🇧';
+        currentLang = 'nl';
+    }
+}
+
+langBtn.addEventListener('click', toggleLang);
+langBtn2.addEventListener('click', toggleLang);
+
+
+const subjectSelect = document.getElementById('subject');
+const customSubjectInput = document.getElementById('custom-subject');
+subjectSelect.addEventListener('change', ()=>{
+    if(subjectSelect.value === 'Other'){
+        customSubjectInput.style.display = 'block';
+        customSubjectInput.required = true;
+    } else {
+        customSubjectInput.style.display = 'none';
+        customSubjectInput.required = false;
+        customSubjectInput.value = '';
+    }
+});
+
+
+const form = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const templateParams = {
+        name: form.name.value,
+        email: form.email.value,
+        subject: subjectSelect.value === 'Other' ? customSubjectInput.value : subjectSelect.value,
+        message: form.message.value
+    };
+
+    emailjs.send('service_bkqgjm8', 'template_wo4us0c', templateParams)
+    .then(function(response) {
+        formMessage.style.color = 'black';
+        formMessage.innerText = 'Your message has been sent successfully!';
+        form.reset();
+        customSubjectInput.style.display = 'none';
+    }, function(error) {
+        formMessage.style.color = 'red';
+        formMessage.innerText = 'Oops! Something went wrong. Please try again.';
+    });
+});
+</script>
+</body>
+</html>

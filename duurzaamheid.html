@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Steril Medical Services - Professional medical equipment cleaning for hospitals.">
+    <title>Steril Medical Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="duurzaamheid.css">
+
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- Apple Touch Icon for iOS -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Optional: Web manifest (for PWA support) -->
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+    <header id="top">
+        <h1>STERIL</h1>
+        <h1>Medical Services</h1>
+        <p>Professional Medical Equipment Cleaning for Hospitals</p>
+    </header>
+
+    <nav>
+        <a href="index.html" id="logo-link">
+            <img class="logo" src="logonavbar.png" alt="Steril Medical Services Logo">
+        </a>
+
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <div class="nav-item-dropdown">
+                <a href="aboutus.html">Over ons <span class="arrow">▼</span></a>
+                <ul class="dropdown">
+                    <li><a href="aboutus.html#about-over">Over Ons</a></li>
+                    <li><a href="aboutus.html#about-us">Wie Zijn Wij</a></li>
+                    <li><a href="aboutus.html#about-missie">Missie</a></li>
+                    <li><a href="aboutus.html#about-visie">Visie</a></li>
+                </ul>
+            </div>
+            <a href="ourservices.html">Dienstverlening</a>
+            <a href="duurzaamheid.html">Duurzaamheid</a>
+            <a href="contact.html">Contact</a>
+            <div class="language-toggle1"><button id="lang-btn">EN 🇬🇧</button></div>
+        </div>
+
+        <div class="language-toggle">
+            <button id="lang-btn2">EN 🇬🇧</button> 
+        </div>
+    </nav>
+
+    <div class="main-layout">
+
+         <div class = "left-column">
+            <section id="information">
+            </section>
+         </div>
+
+        <div class="right-column">
+            <section id="about">
+                <h2 id="about-title">Duurzaamheid</h2>
+                <p id="about-text1" >Bij STERIL combineren we innovatie met duurzaamheid. Wij bieden toekomstbestendige oplossingen voor medische sterilisatie en hergebruik van instrumentarium.</p>
+
+                <p id="about-text2" >Samen met strategische partners ontwikkelen we circulaire concepten waarbij herstel, onderhoud en reparatie de standaard vormen. Dankzij digitale traceerbaarheid (IVS + EPD), Lean–Six Sigma en on-site services realiseren we maximale kwaliteit, efficiëntie en CO₂-reductie.</p>
+
+                <p id="about-text3" >Met (op termijn) meerdere locaties in Nederland en de mogelijkheid tot gezamenlijke hubs, verkorten we transportafstanden en verlagen we de milieu-impact. STERIL maakt circulaire zorg concreet — veilig, betaalbaar en duurzaam voor elke zorginstelling.</p>
+                <br><br><br><br><br><br><br><br><br><br><br>
+            </section>
+        
+        </div>
+    </div>
+
+<footer>
+  <p>
+    <a href="algemene-voorwaarden.pdf" target="_blank" style="color:#0A66C2; text-decoration:none; margin:0 10px;">
+      Algemene voorwaarden
+    </a> |
+    <a href="disclaimer.pdf" target="_blank" style="color:#0A66C2; text-decoration:none; margin:0 10px;">
+      Disclaimer
+    </a> |
+    <a href="corporate-governance.pdf" target="_blank" style="color:#0A66C2; text-decoration:none; margin:0 10px;">
+      Corporate governance
+    </a>
+
+</p>
+  <p style="margin-top:10px;">&copy; 2025 STERIL Medical Services. All rights reserved.</p>
+</footer>
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const logo = document.getElementById('logo-link');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('show');
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+        const isClickInsideNav = navLinks.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
+
+        if (!isClickInsideNav && !isClickOnHamburger) {
+            navLinks.classList.remove('show');
+        }
+        });
+
+
+const langBtn = document.getElementById('lang-btn');
+const langBtn2 = document.getElementById('lang-btn2');
+let currentLang = 'nl';
+
+function toggleLang() {
+    const aboutDropdownLink = document.querySelector('#nav-links a[href="aboutus.html"]');
+    const dropdownItems = document.querySelectorAll('.dropdown li a');
+
+    if (currentLang === 'nl') {
+        document.getElementById('about-title').textContent = 'Sustainability';
+        document.getElementById('about-text1').textContent = 'At STERIL, we combine innovation with sustainability. We offer future-proof solutions for medical sterilization and the reuse of instruments.';
+        document.getElementById('about-text2').textContent = 'Together with strategic partners, we develop circular concepts where repair, maintenance, and refurbishment are the standard. Thanks to digital traceability (IVS + EHR), Lean–Six Sigma, and on-site services, we achieve maximum quality, efficiency, and CO₂ reduction.';
+        document.getElementById('about-text3').textContent = 'With (eventually) multiple locations in the Netherlands and the possibility of joint hubs, we shorten transportation distances and reduce environmental impact. STERIL makes circular healthcare tangible — safe, affordable, and sustainable for every healthcare institution.';
+
+        document.querySelector('#nav-links a[href="index.html"]').textContent = 'Home';
+        aboutDropdownLink.childNodes[0].nodeValue = 'About ';
+        document.querySelector('#nav-links a[href="ourservices.html"]').textContent = 'Our Services';
+        document.querySelector('#nav-links a[href="duurzaamheid.html"]').textContent = 'Sustainability';
+        document.querySelector('#nav-links a[href="contact.html"]').textContent = 'Contact';
+
+        dropdownItems[0].textContent = 'About Us';
+        dropdownItems[1].textContent = 'Who We Are';
+        dropdownItems[2].textContent = 'Mission';
+        dropdownItems[3].textContent = 'Vision';
+
+        langBtn.textContent = 'NL 🇳🇱';
+        langBtn2.textContent = 'NL 🇳🇱';
+        currentLang = 'en';
+    } else {
+        document.getElementById('about-title').textContent = 'Duurzaamheid';
+        document.getElementById('about-text1').textContent = 'Bij STERIL combineren we innovatie met duurzaamheid. Wij bieden toekomstbestendige oplossingen voor medische sterilisatie en hergebruik van instrumentarium.';
+        document.getElementById('about-text2').textContent = 'Samen met strategische partners ontwikkelen we circulaire concepten waarbij herstel, onderhoud en reparatie de standaard vormen. Dankzij digitale traceerbaarheid (IVS + EPD), Lean–Six Sigma en on-site services realiseren we maximale kwaliteit, efficiëntie en CO₂-reductie.';
+        document.getElementById('about-text3').textContent = 'Met (op termijn) meerdere locaties in Nederland en de mogelijkheid tot gezamenlijke hubs, verkorten we transportafstanden en verlagen we de milieu-impact. STERIL maakt circulaire zorg concreet — veilig, betaalbaar en duurzaam voor elke zorginstelling.';
+
+        document.querySelector('#nav-links a[href="index.html"]').textContent = 'Home';
+        aboutDropdownLink.childNodes[0].nodeValue = 'Over ons ';
+        document.querySelector('#nav-links a[href="ourservices.html"]').textContent = 'Dienstverlening';
+        document.querySelector('#nav-links a[href="duurzaamheid.html"]').textContent = 'Duurzaamheid';
+        document.querySelector('#nav-links a[href="contact.html"]').textContent = 'Contact';
+
+        dropdownItems[0].textContent = 'Over Ons';
+        dropdownItems[1].textContent = 'Wie Zijn Wij';
+        dropdownItems[2].textContent = 'Missie';
+        dropdownItems[3].textContent = 'Visie';
+
+        langBtn.textContent = 'EN 🇬🇧';
+        langBtn2.textContent = 'EN 🇬🇧';
+        currentLang = 'nl';
+    }
+}
+
+langBtn.addEventListener('click', toggleLang);
+langBtn2.addEventListener('click', toggleLang);
+
+    </script>
+</body>
+</html>
